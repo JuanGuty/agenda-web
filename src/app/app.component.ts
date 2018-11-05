@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'La agenda';
   owner = 'Juan';
 
-  gretter(name){
+  gretter(name) {
     this.owner = name;
     console.log(this.owner);
   }

@@ -1,19 +1,19 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   private configUrl = 'assets/config.json';
   private apiUrl =
-    'https://agenda-api-guty.now.sh/api/Persons';
+   'https://agenda-api-guty.now.sh/api/Persons';
 
   getConfig() {
     return this.http.get(this.configUrl);
-}
+  }
 
   getPersons() {
     return this.http.get(this.apiUrl);
@@ -30,7 +30,7 @@ export class PersonService {
     );
   }
 
-  deletePerson(personId){
+  deletePerson(personId) {
     return this.http.delete(this.apiUrl + '/' + personId);
   }
 }
