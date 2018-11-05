@@ -14,6 +14,7 @@ import { MyDdComponent } from './my-dd/my-dd.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NewFormComponent } from './new-form/new-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
