@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class PersonService {
   constructor(private http: HttpClient) {}
 
-  configUrl = 'assets/config.json';
-  private apiUrl = 'https://agenda-api-jgg.now.sh/api/Persons';
+  private configUrl = 'assets/config.json';
+  private apiUrl =
+   'https://agenda-api-jgg.now.sh/api/Persons';
 
   getConfig() {
     return this.http.get(this.configUrl);
@@ -21,8 +22,8 @@ export class PersonService {
   addPerson(person) {
     return this.http.post(this.apiUrl, person);
   }
-  
-   updatePerson(person) {
+
+  updatePerson(person) {
     return this.http.put(
       this.apiUrl + '/' + person.id,
       person
