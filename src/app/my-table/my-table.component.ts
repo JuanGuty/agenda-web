@@ -14,7 +14,7 @@ export class MyTableComponent implements OnInit {
   dataSource = new PersonDataSource(this.personService);
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['name', 'lastName', 'nick'];
+  displayedColumns = ['name', 'lastName', 'nick', 'actions'];
 
   constructor(private personService: PersonService) {
     this.personService.getConfig().subscribe( config => {
