@@ -27,46 +27,13 @@ export class NewFormComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    const personToUpdate = JSON.parse(
-      localStorage.getItem('person')
-    );
-    console.log(personToUpdate);
-
-    if (personToUpdate !== null) {
-      this.isNewPerson = false;
-      this.personForm.setValue(personToUpdate);
-      localStorage.clear();
-    }
-  }
-
   onSubmit() {
     console.log(this.personForm.value);
-    if (this.isNewPerson) {
-      this.personService
-        .addPerson(this.personForm.value)
-        .subscribe(
-          response => {
-            console.log('OK: ', response);
-            this.personForm.reset();
-          },
-          error => {
-            console.log('ERROR: ', error);
-          }
-        );
-    } else {
-      this.personService
-        .updatePerson(this.personForm.value)
-        .subscribe(
-          response => {
-            console.log('OK: ', response);
-            this.personForm.reset();
-            this.router.navigate(['/lista']);
-          },
-          error => {
-            console.log('ERROR: ', error);
-          }
-        );
+    this.personService.addPerson(this.personForm.value).subscribe(response => {
+      console.log('OK: ', response);
+    }, error => {
+      console.log('ERROR: ', error);
     }
+    );
   }
 }

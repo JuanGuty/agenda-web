@@ -9,7 +9,7 @@ export class PersonService {
 
   private configUrl = 'assets/config.json';
   private apiUrl =
-   'https://agenda-api-guty.now.sh/api/Persons';
+   'https://agenda-api-jgg.now.sh/api/Persons';
 
   getConfig() {
     return this.http.get(this.configUrl);
@@ -21,16 +21,5 @@ export class PersonService {
 
   addPerson(person) {
     return this.http.post(this.apiUrl, person);
-  }
-
-  updatePerson(person) {
-    return this.http.put(
-      this.apiUrl + '/' + person.id,
-      person
-    );
-  }
-
-  deletePerson(personId) {
-    return this.http.delete(this.apiUrl + '/' + personId);
   }
 }

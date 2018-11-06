@@ -19,7 +19,7 @@
           <mat-form-field class="full-width">
             <input matInput placeholder="Apellido" formControlName="lastname">
             <mat-error *ngIf="personForm.controls['lastname'].hasError('required')">
-              Apellido <strong>requerido</strong>
+              El Apellido es<strong>requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -33,7 +33,6 @@
             <mat-error *ngIf="personForm.controls['email'].hasError('required')">
               El email es <strong>requerido</strong>
             </mat-error>
-
             <mat-error *ngIf="personForm.controls['email'].hasError('email')">
               Escribe bien tu correo
             </mat-error>
